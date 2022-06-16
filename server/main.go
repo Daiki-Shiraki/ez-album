@@ -9,6 +9,8 @@ func main() {
 	router := gin.Default()
 
 	router.GET("/piyo", controller.Piyo)
+	router.GET("/ping", controller.Pong)
+
 	// router.GET("/tasks", controller.TaskList)
 	// router.POST("/tasks", controller.CreateTask)
 	// router.GET("/tasks/:id", controller.ReadTask)
