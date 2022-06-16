@@ -9,3 +9,6 @@ import (
 func Piyo(c *gin.Context) {
 	c.String(http.StatusOK, "piyo")
 }
+func Pong(c *gin.Context) {
+	c.String(http.StatusOK, "Pong!!")
+}
