@@ -7,3 +7,10 @@ services:
       - 3000:3000
     volumes:
       - ./server:/go/src/server
+  client:
+    container_name: client
+    build: ./client
+    ports:
+      - 8080:8080
+    volumes:
+      - ./client/src:/opt/app
