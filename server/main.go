@@ -17,5 +17,6 @@ func main() {
 	// router.PUT("/tasks/:id", controller.UpdateTask)
 	// router.DELETE("/tasks/:id", controller.DeleteTask)
 
+	router.POST("/images", controller.Upload)
 	router.Run(":3000")
 }
