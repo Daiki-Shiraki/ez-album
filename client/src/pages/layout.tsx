@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ReactNode } from "react";
+import Form from "../components/UploadPhoto";
 
 const Layout = ({ children }: Props) => {
   return (
@@ -11,6 +12,7 @@ const Layout = ({ children }: Props) => {
             <Link href="/about">
                 <a>About</a>
             </Link>
+            <Form></Form>
         </nav>
         {children}
     </div>
