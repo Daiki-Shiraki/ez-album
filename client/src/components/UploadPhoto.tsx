@@ -1,12 +1,14 @@
+import { FormControl, Select, Input, FormLabel, Box, Container, Center, VStack, StackDivider, Button } from '@chakra-ui/react';
 import axios from 'axios';
 import React, {useState} from "react";
+import styles from "../styles/UploadPhoto.module.css"
 
 const Form = () => {
   const [photo, setPhoto] = useState('');
   const [folder, setFolder] = useState('');
 
   const onChangeFile = (event: React.ChangeEvent<HTMLInputElement>) : void => setPhoto(event.target.value)
-  const onChangeText = (event: React.ChangeEvent<HTMLInputElement>) : void => setFolder(event.target.value)
+  const onChangeSelect = (event: React.ChangeEvent<HTMLSelectElement>) : void => setFolder(event.target.value)
 
   const onClickUpload = () => {
     const formData = new FormData();
@@ -24,12 +26,35 @@ const Form = () => {
 
   return (
     <div>
-      <h1>写真をアップロード</h1>
-      <div>
-        <input type={'file'} value={photo} onChange={onChangeFile} style={{ border: "1px solid #222", borderRadius: 10, padding: 10, cursor: "pointer" }}/>
-        <input type={'text'} value={folder} onChange={onChangeText} style={{ border: "1px solid #222", borderRadius: 10, padding: 10, cursor: "pointer" }}/>
-        <button onClick={onClickUpload}>アップロード</button>
-      </div>
+      <Center>
+        <VStack
+          spacing={4}
+          direction='column'
+          align='center'
+        >
+        <h1 className={`${styles.formCtlPhoto}`}>Upload a photo with a dir tag!</h1>
+
+        <FormControl>
+          <FormLabel htmlFor='photo'>Photo:</FormLabel>
+          <span className={`${styles.photoLabel}`}>
+            <Input id='photo' type='file' accept='image/.png,.jpg,.jpeg' className={`${styles.photoForm}`} onChange={onChangeFile}></Input>
+          </span>
+          <p className={`${styles.photoText}`}>Select photo</p>
+        </FormControl>
+
+        <FormControl>
+          <FormLabel htmlFor='directory'>Directory</FormLabel>
+          <Select id='directory' placeholder='Select directory' size='lg' onChange={onChangeSelect}>
+            <option value='msonobe'>msonobe</option>
+            <option value='dshiraki'>dshiraki</option>
+            <option value='kfukao'>kfukao</option>
+          </Select>
+        </FormControl>
+
+        <Button colorScheme='teal' size='lg' className={`${styles.sendButton}`} onClick={onClickUpload}>Upload</Button>
+
+        </VStack>
+      </Center>
     </div>
   )
 };

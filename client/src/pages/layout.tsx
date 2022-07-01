@@ -1,11 +1,13 @@
 import { ReactNode } from "react";
-import Navbar from "../components/navbar";
+import MenuBar from "../components/MenuBar";
+import UploadPhoto from "../components/UploadPhoto";
 
 const Layout = ({ children }: Props) => {
   return (
     <div>
-        <Navbar></Navbar>
-        {children}
+        <MenuBar></MenuBar>
+        <UploadPhoto></UploadPhoto>
+        {/* {children} */}
     </div>
   ); 
 };
