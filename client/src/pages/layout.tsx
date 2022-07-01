@@ -1,18 +1,13 @@
-import Link from "next/link";
 import { ReactNode } from "react";
+import MenuBar from "../components/MenuBar";
+import UploadPhoto from "../components/UploadPhoto";
 
 const Layout = ({ children }: Props) => {
   return (
     <div>
-        <nav className="flex flex-rows p-2 bg-red-500 text-white font-bold">
-            <Link href="/">
-                <a>Home</a>
-            </Link>
-            <Link href="/about">
-                <a>About</a>
-            </Link>
-        </nav>
-        {children}
+        <MenuBar></MenuBar>
+        <UploadPhoto></UploadPhoto>
+        {/* {children} */}
     </div>
   ); 
 };
