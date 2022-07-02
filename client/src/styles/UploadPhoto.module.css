@@ -38,3 +38,8 @@
     left: 15px;
     font-size: large;
 }
+
+.photo {
+    position: relative;
+    top: 70px;
+}

@@ -1,9 +1,20 @@
 .menubar{
     background-color: lightsalmon;
+    height: 60px;
 }
 
 .menuText {
     color: white;
     font-size:xx-large;
-    margin-left: 10px;
+    margin-left: 50px;
+    position: relative;
+    bottom: 32px;
+}
+
+.icon {
+    background-color: white;
+    color: white;
+    position: relative;
+    top: 12px;
+    left: 5px;
 }

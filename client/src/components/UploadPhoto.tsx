@@ -44,7 +44,6 @@ const Form = () => {
           align='center'
         >
         <h1 className={`${styles.formCtlPhoto}`}>Upload a photo with a dir tag!</h1>
-
         <FormControl>
           <FormLabel htmlFor='photo'>Photo:</FormLabel>
           <span className={`${styles.photoLabel}`}>
@@ -52,7 +51,6 @@ const Form = () => {
           </span>
           <p className={`${styles.photoText}`}>Select photo</p>
         </FormControl>
-
         <FormControl>
           <FormLabel htmlFor='directory'>Directory</FormLabel>
           <Select id='directory' placeholder='Select directory' size='lg' onChange={onChangeSelect}>
@@ -61,13 +59,8 @@ const Form = () => {
             <option value='kfukao'>kfukao</option>
           </Select>
         </FormControl>
-
         <Button colorScheme='teal' size='lg' className={`${styles.sendButton}`} onClick={onClickUpload}>Upload</Button>
-
-        <Box boxSize='sm'>
-          <Image src={photoURL} alt='preview'/>
-        </Box>
-
+        <Image src={photoURL} alt='preview' className={`${styles.photo}`}/>
         </VStack>
       </Center>
     </div>
